@@ -1,11 +1,11 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, abort
 import time
 import random
 import string
 
 app = Flask(__name__)
 
-@app.route('/<accountId>/data')
+@app.route('/<int:accountId>/data')
 def get_data(accountId):
     timestamp = time.time()
     data = ''.join(random.choices(string.ascii_letters + string.digits, k=10))

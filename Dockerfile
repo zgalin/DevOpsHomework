@@ -3,7 +3,6 @@ FROM python:3.8-slim as builder
 
 WORKDIR /app
 
-# Copy only the requirements file to leverage Docker cache
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
